@@ -1,4 +1,5 @@
 export default function LoadingSkeletonCard() {
+  console.log("Loading Skeleton running =>");
   return (
     <div className="soft-card overflow-hidden">
       <div className="aspect-square bg-slate-100 animate-pulse"></div>

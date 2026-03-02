@@ -1,0 +1,40 @@
+flowchart TD
+  App["App.jsx"] --> Page["Component/Page.jsx"]
+
+  Page --> Navbar["Header/Navbar.jsx"]
+  Page --> MainContent["Main/MainContent.jsx"]
+  Page --> Footer["Footer/Footer.jsx"]
+
+  Navbar --> Logo["Logo.jsx"]
+  Navbar --> NavLinks["NavLinks.jsx"]
+  Navbar --> SearchBar["SearchBar.jsx"]
+  Navbar --> CartButton["CartButton.jsx"]
+
+  MainContent --> Hero["Hero/Hero.jsx"]
+  MainContent --> FiltersSorting["FiltersSortingSection.jsx"]
+
+  FiltersSorting --> SidebarFilters["SidebarFilters/SidebarFilters.jsx"]
+  FiltersSorting --> ProductsGrid["ProductsGrid/ProductsGrid.jsx"]
+
+  SidebarFilters --> CategoryFilter["CategoryFilter.jsx"]
+  SidebarFilters --> PriceFilter["PriceFilter.jsx"]
+  SidebarFilters --> RatingFilter["RatingFilter.jsx"]
+
+  ProductsGrid --> SortingOptions["SortingOptions.jsx"]
+  ProductsGrid --> ProductsList["ProductsList.jsx"]
+  ProductsList --> ProductCard["ProductCard.jsx"]
+  ProductsList --> LoadingSkeleton["LoadingSkeletonCard.jsx"]
+
+  Footer --> AboutTechHub["AboutTechHub.jsx"]
+  Footer --> QuickLinks["QuickLinks.jsx"]
+  Footer --> CustomerService["CustomerService.jsx"]
+  Footer --> FollowUs["FollowUs.jsx"]
+  Footer --> FooterBottom["FooterBottom.jsx"]
+
+  CartRoot["Cart/Cart.jsx (not mounted)"] --> CartContent["CartContent.jsx"]
+  CartContent --> CartItems["CartItems/CartItems.jsx"]
+  CartContent --> CheckoutForm["CheckoutForm/CheckoutForm.jsx"]
+  CartItems --> CartItem["CartItem.jsx"]
+  CheckoutForm --> Summary["Summary.jsx"]
+
+  HeaderWrapper["Header/Header.jsx (not mounted)"] -.-> Navbar

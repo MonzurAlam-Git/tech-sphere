@@ -1,7 +1,14 @@
+import { useContext } from "react";
+import { ProductContext } from "../../../../Context/context";
+
 export default function SortingOptions() {
+  const { productsData } = useContext(ProductContext);
+
   return (
     <div className="flex items-center justify-between mb-6">
-      <p className="text-slate-600">Showing 12 products</p>
+      <p className="text-slate-600">
+        Showing {productsData.data.length} products
+      </p>
       <div className="flex items-center gap-2">
         <label htmlFor="sort" className="text-sm font-medium text-slate-700">
           Sort by:

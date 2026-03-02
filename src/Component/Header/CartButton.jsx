@@ -1,10 +1,20 @@
+import { useContext } from "react";
+import { CartContext } from "../../Context/context";
+
 export default function CartButton() {
+  const { cartData, showCart, setshowCart } = useContext(CartContext);
+  console.log("cartData =>", cartData);
   return (
     <a
-      href="cart.html"
+      onClick={() => setshowCart((prev) => !prev)}
       className="relative flex items-center gap-2 px-3 py-2 rounded-full border border-slate-200 bg-white shadow-sm hover:border-rose-300"
     >
-      <svg className="w-5 h-5 text-rose-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <svg
+        className="w-5 h-5 text-rose-500"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+      >
         <path
           strokeLinecap="round"
           strokeLinejoin="round"
@@ -14,7 +24,7 @@ export default function CartButton() {
       </svg>
       <span className="text-sm font-semibold text-slate-900">Cart</span>
       <span className="absolute -top-2 -right-2 h-5 w-5 rounded-full bg-rose-500 text-white text-xs font-bold flex items-center justify-center shadow">
-        3
+        {cartData.data.length}
       </span>
     </a>
   );
