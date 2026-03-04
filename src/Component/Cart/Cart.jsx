@@ -34,10 +34,7 @@ export default function Cart() {
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-        {/* Cart Items */}
         <CartItems />
-
-        {/* Checkout Form */}
         <CheckoutForm />
       </div>
     </main>

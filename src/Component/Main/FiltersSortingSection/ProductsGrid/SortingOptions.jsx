@@ -1,8 +1,15 @@
 import { useContext } from "react";
 import { ProductContext } from "../../../../Context/context";
 
+const sortOptions = [
+  { label: "Newest", value: "newest" },
+  { label: "Oldest", value: "oldest" },
+  { label: "Price: Low to High", value: "price_asc" },
+  { label: "Price: High to Low", value: "price_desc" },
+];
+
 export default function SortingOptions() {
-  const { productsData } = useContext(ProductContext);
+  const { productsData, handleSort } = useContext(ProductContext);
 
   return (
     <div className="flex items-center justify-between mb-6">
@@ -15,12 +22,14 @@ export default function SortingOptions() {
         </label>
         <select
           id="sort"
+          onChange={(e) => handleSort(e.target.value)}
           className="px-3 py-2 border border-slate-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-rose-300 bg-white"
         >
-          <option>Newest</option>
-          <option>Oldest</option>
-          <option>Price: Low to High</option>
-          <option>Price: High to Low</option>
+          {sortOptions.map((option) => (
+            <option key={option.value} value={option.value}>
+              {option.label}
+            </option>
+          ))}
         </select>
       </div>
     </div>

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
-const useProductData = (base) => {
-  const [baseData, setBaseData] = useState({
+const useFetchData = (endpoint) => {
+  const [productsData, setProductsData] = useState({
     success: true,
     count: 20,
     data: [],
@@ -19,14 +19,13 @@ const useProductData = (base) => {
         state: true,
         message: "Data fetching",
       });
-      const res = await fetch(`http://localhost:9000/${base}`);
+      const res = await fetch(`http://localhost:9000/${endpoint}`);
       if (!res.ok) {
         throw new Error(`HTTP error! status: ${res.status}`);
       }
       const newData = await res.json();
 
-      //   const updatedProducts = [...productsData, newData];
-      setBaseData(newData);
+      setProductsData(newData);
       setLoading({ state: false, message: "Products fetched successfully" });
     } catch (error) {
       setError(error.message);
@@ -39,11 +38,12 @@ const useProductData = (base) => {
   }, []);
 
   return {
-    baseData,
-    setBaseData,
+    productsData,
+    setProductsData,
     loading,
     error,
+    setLoading,
   };
 };
 
-export default useProductData;
+export default useFetchData;

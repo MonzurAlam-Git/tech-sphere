@@ -1,6 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap");
 @import "tailwindcss";
 
+@layer components {
+  .button-disabled {
+    @apply bg-gray-400 text-gray-600 cursor-not-allowed opacity-50 hover:bg-gray-400 disabled:bg-gray-400 disabled:opacity-50;
+  }
+}
+
 :root {
   --ink: #161616;
   --muted: #6b7280;
@@ -13,10 +19,24 @@
 }
 
 body {
-  font-family: "DM Sans", "Inter", system-ui, -apple-system, sans-serif;
+  font-family:
+    "DM Sans",
+    "Inter",
+    system-ui,
+    -apple-system,
+    sans-serif;
   background:
-    radial-gradient(circle at 18% 20%, rgba(255, 56, 92, 0.06), transparent 32%),
-    radial-gradient(circle at 80% 10%, rgba(249, 115, 22, 0.05), transparent 30%), var(--bg);
+    radial-gradient(
+      circle at 18% 20%,
+      rgba(255, 56, 92, 0.06),
+      transparent 32%
+    ),
+    radial-gradient(
+      circle at 80% 10%,
+      rgba(249, 115, 22, 0.05),
+      transparent 30%
+    ),
+    var(--bg);
   color: var(--ink);
   min-height: 100vh;
 }

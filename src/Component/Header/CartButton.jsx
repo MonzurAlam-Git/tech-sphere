@@ -2,8 +2,8 @@ import { useContext } from "react";
 import { CartContext } from "../../Context/context";
 
 export default function CartButton() {
-  const { cartData, showCart, setshowCart } = useContext(CartContext);
-  console.log("cartData =>", cartData);
+  const { cartData, setshowCart } = useContext(CartContext);
+
   return (
     <a
       onClick={() => setshowCart((prev) => !prev)}

@@ -1,20 +1,15 @@
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { CartContext } from "../../../../Context/context";
 
 export default function ProductCard({ product }) {
-  const { toggleCart } = useContext(CartContext);
+  const { cartData, toggleCart } = useContext(CartContext);
 
-  const [isInCart, setisInCart] = useState(false);
-
-  const handleToggleCart = () => {
-    toggleCart(product);
-    setisInCart(!isInCart);
-  };
+  const isInCart = cartData.data.some((item) => item.productId === product.id);
 
   return (
     <div className="soft-card overflow-hidden hover:-translate-y-1 transition-all">
       <button
-        onClick={handleToggleCart}
+        onClick={() => toggleCart(product, 1)}
         className="w-full button-primary py-2.5 rounded-lg font-semibold"
       >
         {isInCart ? "Remove From Cart" : "Add to Cart"}

@@ -10,12 +10,17 @@ export default function Hero() {
           Build a setup that feels handcrafted for you.
         </h1>
         <p className="text-lg text-slate-600 max-w-2xl">
-          Premium desktops, laptops, and workstations tuned for creators, engineers, and gamers.
-          Thoughtful thermals, quiet builds, and concierge support.
+          Premium desktops, laptops, and workstations tuned for creators,
+          engineers, and gamers. Thoughtful thermals, quiet builds, and
+          concierge support.
         </p>
         <div className="flex flex-wrap gap-3">
-          <button className="button-primary px-4 py-3">Shop flagship rigs</button>
-          <button className="button-ghost px-4 py-3">Talk to a build specialist</button>
+          <button className="button-primary px-4 py-3">
+            Shop flagship rigs
+          </button>
+          <button className="button-ghost px-4 py-3">
+            Talk to a build specialist
+          </button>
         </div>
         <div className="flex items-center gap-6 text-sm text-slate-600">
           <div className="flex items-center gap-2">
@@ -34,7 +39,9 @@ export default function Hero() {
       </div>
       <div className="w-full lg:w-80">
         <div className="soft-card p-6 h-full">
-          <h3 className="text-lg font-semibold text-slate-900 mb-2">Trending collections</h3>
+          <h3 className="text-lg font-semibold text-slate-900 mb-2">
+            Trending collections
+          </h3>
           <div className="space-y-3 text-sm">
             <div className="flex items-center justify-between">
               <span className="text-slate-700">Creator Pro rigs</span>
